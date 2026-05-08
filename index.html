@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nuwara Eliya Tuk Tuk Tours</title>
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff;
+    color:#222;
+    overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    z-index:1000;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(8px);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+}
+
+.logo{
+    color:#fff;
+    font-size:28px;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#fff;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#ff9d00;
+}
+
+.menu-btn{
+    display:none;
+    color:#fff;
+    font-size:26px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    height:100vh;
+    background:url('images/hero.jpg.jpeg') center center/cover no-repeat;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 20px;
+}
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    color:#fff;
+    max-width:850px;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:65px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:20px;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 30px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.orange-btn{
+    background:#ff8800;
+    color:#fff;
+}
+
+.orange-btn:hover{
+    background:#e67300;
+}
+
+.whatsapp-btn{
+    background:#25d366;
+    color:#fff;
+}
+
+.whatsapp-btn:hover{
+    background:#1ebe5d;
+}
+
+/* ================= COMMON ================= */
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:42px;
+    color:#ff8800;
+}
+
+/* ================= ABOUT ================= */
+
+.about-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:20px;
+}
+
+.about-text h3{
+    font-size:36px;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.features div{
+    margin-bottom:15px;
+    font-weight:600;
+}
+
+.features i{
+    color:#ff8800;
+    margin-right:10px;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+    background:#f8f8f8;
+}
+
+.service-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.service-card{
+    background:#fff;
+    padding:40px 30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+}
+
+.service-card i{
+    font-size:50px;
+    color:#ff8800;
+    margin-bottom:20px;
+}
+
+.service-card h3{
+    margin-bottom:15px;
+}
+
+.highlight{
+    color:#e67300;
+    font-weight:700;
+}
+
+/* ================= PACKAGES ================= */
+
+.package-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.package-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.package-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.package-content{
+    padding:25px;
+}
+
+.package-content h3{
+    margin-bottom:15px;
+}
+
+.package-content p{
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+/* ================= ITINERARY ================= */
+
+.itinerary{
+    background:#fff;
+}
+
+.itinerary-container{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.itinerary-box{
+    background:#f8f8f8;
+    border-left:5px solid #ff8800;
+    padding:25px;
+    border-radius:15px;
+    display:flex;
+    gap:25px;
+    align-items:flex-start;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.time{
+    min-width:120px;
+    font-weight:700;
+    color:#ff8800;
+    font-size:20px;
+}
+
+.details h3{
+    margin-bottom:10px;
+}
+
+.details p{
+    line-height:1.7;
+}
+
+@media(max-width:700px){
+
+    .itinerary-box{
+        flex-direction:column;
+    }
+
+    .time{
+        min-width:100%;
+    }
+
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+    background:#f8f8f8;
+}
+
+.gallery-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.gallery-container img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.gallery-container img:hover{
+    transform:scale(1.03);
+}
+
+/* ================= REVIEWS ================= */
+
+.review-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.review-card{
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.review-card p{
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    background:#111;
+    color:#fff;
+}
+
+.contact-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-info h3{
+    font-size:34px;
+    margin-bottom:25px;
+}
+
+.contact-info p{
+    margin-bottom:15px;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    outline:none;
+}
+
+.contact-form textarea{
+    height:140px;
+    resize:none;
+}
+
+.contact-form button{
+    padding:14px;
+    border:none;
+    border-radius:40px;
+    background:#ff8800;
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#000;
+    color:#fff;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.copy{
+    margin-top:15px;
+    opacity:0.7;
+}
+
+/* ================= PRICING ================= */
+
+.pricing{
+    background:#f8f8f8;
+}
+
+.pricing-card{
+    max-width:1100px;
+    margin:auto;
+    background:#fff;
+    border-radius:25px;
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:350px 1fr;
+    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+}
+
+.price-tag{
+    background:linear-gradient(135deg,#ff8800,#ffb347);
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:50px 20px;
+    text-align:center;
+}
+
+.price-tag h1{
+    font-size:80px;
+    margin-bottom:15px;
+}
+
+.price-tag p{
+    font-size:20px;
+    font-weight:500;
+}
+
+.pricing-details{
+    padding:50px;
+}
+
+.pricing-details h3{
+    font-size:36px;
+    margin-bottom:20px;
+}
+
+.pricing-details p{
+    line-height:1.8;
+    margin-bottom:30px;
+    color:#444;
+}
+
+.pricing-features{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-bottom:35px;
+}
+
+.pricing-features div{
+    font-weight:500;
+}
+
+.pricing-features i{
+    color:#ff8800;
+    margin-right:10px;
+}
+
+.pricing-btn{
+    display:inline-block;
+    background:#25d366;
+    color:#fff;
+    padding:16px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.pricing-btn:hover{
+    background:#1ebe5d;
+}
+
+@media(max-width:850px){
+
+    .pricing-card{
+        grid-template-columns:1fr;
+    }
+
+    .price-tag h1{
+        font-size:60px;
+    }
+
+    .pricing-details{
+        padding:35px 25px;
+    }
+
+    .pricing-details h3{
+        font-size:28px;
+    }
+
+}
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        position:absolute;
+        top:80px;
+        right:-100%;
+        background:#111;
+        width:260px;
+        height:100vh;
+        flex-direction:column;
+        padding-top:40px;
+        transition:0.4s;
+    }
+
+    .nav-links.active{
+        right:0;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+    }
+
+    .about-container,
+    .contact-container{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero{
+        background:url('images/hero-mobile.jpg.jpeg') center center/cover no-repeat;
+        min-height:100vh;
+    }
+
+}
+
+    .hero-content{
+        padding-top:80px;
+    }
+
+    .hero-content h1{
+        font-size:32px;
+        line-height:1.3;
+    }
+
+    .hero-content p{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn{
+        width:100%;
+        max-width:280px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+  <nav class="navbar">
+
+    <div class="logo">Nuwara Eliya Tuk Tuk Tours</div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#services">SERVICES</a></li>
+      <li><a href="#packages">PACKAGES</a></li>
+      <li><a href="#pricing">PRICING</a></li>
+      <li><a href="#itinerary">ITINERARY</a></li>
+      <li><a href="#gallery">GALLERY</a></li>
+      <li><a href="#reviews">REVIEWS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+
+    <div class="menu-btn" id="menuBtn">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+  </nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+
+    <h1>EXPLORE NUWARA ELIYA LIKE A LOCAL</h1>
+
+    <p>
+      Private Tuk Tuk Tours • Scenic Adventures • Friendly Local Drivers
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#packages" class="btn orange-btn">
+        View Packages
+      </a>
+
+      <a href="https://wa.me/94779944918" class="btn whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i>
+        Book via WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+  <div class="section-title">
+    <h2>ABOUT US</h2>
+  </div>
+
+  <div class="about-container">
+
+    <div class="about-image">
+      <img src="images/gallery 14.jpeg">
+    </div>
+
+    <div class="about-text">
+
+      <h3>Your Local Travel Partner</h3>
+
+      <p>
+        About This Experience
+Explore the beauty of Nuwara Eliya with a private local Tuk Tuk tour designed for travelers who want an authentic hill country experience. We provide friendly English-speaking local drivers with over 13 years of experience in tourism.
+During this 4.5–5 hour journey, we will take you to famous tea estates and factories including Bluefield, Kingswood, or Labookellie Tea Factory (depending on availability and guest preference). Guests can enjoy a traditional tea picking experience dressed like Sri Lankan tea pickers — perfect for memorable photos and a unique cultural experience.
+You can also visit the tea factory to see how world-famous Ceylon Tea is made, enjoy tea tasting sessions, and purchase fresh tea products. (Tea tasting may be free or payable depending on the factory.)
+Along the tour, we stop at beautiful viewpoints, hidden scenic spots, local markets, and popular landmarks around Nuwara Eliya and Ramboda.
+Adventure lovers can enjoy a 900-meter one-way hike to Ramboda Falls, and guests may swim in the natural pool if weather conditions are suitable.
+We provide pickup and drop-off from guest hotels and landmarks around Nuwara Eliya for a smooth and comfortable experience.
+Experience tea culture, nature, waterfalls, viewpoints, and local life — all in one unforgettable Tuk Tuk journey.
+      </p>
+
+      <p>
+        Safe rides, affordable prices and friendly local drivers.
+      </p>
+
+      <div class="features">
+
+        <div>
+          <i class="fa-solid fa-star"></i>
+          Trusted by Travelers
+        </div>
+
+        <div>
+          <i class="fa-solid fa-star"></i>
+          Private Tours
+        </div>
+
+        <div>
+          <i class="fa-solid fa-star"></i>
+          Local Experience
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+  <div class="section-title">
+    <h2>OUR SERVICES</h2>
+  </div>
+
+  <div class="service-container">
+
+    <div class="service-card">
+      <i class="fa-solid fa-map-location-dot"></i>
+      <h3>City Tours</h3>
+      <p>Explore top attractions around Nuwara Eliya.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Private Transport</h3>
+      <p>
+  Comfortable <span class="highlight">TUK TUKS</span> with local Drivers.
+</p>
+    </div>
+
+    <div class="service-card">
+      <i class="fa-solid fa-mountain-sun"></i>
+      <h3>Adventure Trips</h3>
+      <p>Waterfalls, mountains and tea estate experiences.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= PACKAGES ================= -->
+
+<section id="packages">
+
+  <div class="section-title">
+    <h2>What You'll Explore</h2>
+  </div>
+
+  <div class="package-container">
+
+    <div class="package-card">
+
+      <img src="images/img2.jpeg">
+
+      <div class="package-content">
+
+        <h3>Tea Picking Experience</h3>
+
+        <p>
+Walk through the misty tea plantations of Nuwara Eliya, hand-pick fresh tea leaves with local tea pickers, explore a traditional tea factory, and enjoy an authentic tea tasting experience surrounded by breathtaking mountain views.
+        </p>
+
+        <a class="btn orange-btn">
+          Golden Experience
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="package-card">
+
+      <img src="images/img3.jpeg">
+
+      <div class="package-content">
+
+        <h3>Tea Tasting Experience</h3>
+
+        <p>
+No visit to Nuwara Eliya is complete without tasting authentic world-famous Ceylon tea at its source. Explore a traditional tea factory, discover the journey from leaf to cup, and enjoy the rich aroma and fresh flavors of premium mountain-grown tea surrounded by breathtaking plantation views.
+        </p>
+
+        <a class="btn orange-btn">
+          Tea paradise
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="package-card">
+
+      <img src="images/img4.jpeg">
+
+      <div class="package-content">
+
+        <h3>Ramboda Waterfalls Experience</h3>
+
+        <p>
+Discover the breathtaking beauty of Ramboda Falls surrounded by the misty mountains of Nuwara Eliya. Relax near crystal-clear natural pools, enjoy the fresh mountain air, and experience one of Sri Lanka’s most scenic nature escapes filled with waterfalls, greenery, and unforgettable views.
+        </p>
+
+        <a class="btn orange-btn">
+          Waterfalls Escape
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= PRICING ================= -->
+
+<section class="pricing" id="pricing">
+
+  <div class="section-title">
+    <h2>TOUR PRICING</h2>
+  </div>
+
+  <div class="pricing-card">
+
+    <div class="price-tag">
+
+      <h1>$44</h1>
+
+      <p>Per Group • Up To 3 Pax</p>
+
+    </div>
+
+    <div class="pricing-details">
+
+      <h3>Nuwara Eliya Tuk Tuk Day Trip</h3>
+
+      <p>
+        Enjoy a private and unforgettable tuk tuk experience through tea plantations,
+        waterfalls, local markets and iconic attractions around Nuwara Eliya.
+      </p>
+
+      <div class="pricing-features">
+
+        <div>
+          <i class="fa-solid fa-check"></i>
+          Private Tuk Tuk Experience
+        </div>
+
+        <div>
+          <i class="fa-solid fa-check"></i>
+          Hotel Pickup Included
+        </div>
+
+        <div>
+          <i class="fa-solid fa-check"></i>
+          Scenic Tea Estates & Waterfalls
+        </div>
+
+        <div>
+          <i class="fa-solid fa-check"></i>
+          Friendly Local Driver
+        </div>
+
+      </div>
+
+      <a href="https://wa.me/94779944918" class="pricing-btn">
+        Book Your Tour
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= ITINERARY ================= -->
+
+<section class="itinerary" id="itinerary">
+
+  <div class="section-title">
+    <h2>DAY TRIP ITINERARY</h2>
+  </div>
+
+  <div class="itinerary-container">
+
+    <!-- STOP 1 -->
+
+    <div class="itinerary-box">
+
+      <div class="time">
+        Stop 01
+      </div>
+
+      <div class="details">
+        <h3>Hotel / Landmark Pickup</h3>
+
+        <p>
+          Your journey begins with a convenient pickup from your hotel or a nearby landmark in Nuwara Eliya.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- STOP 2 -->
+
+    <div class="itinerary-box">
+
+      <div class="time">
+        Stop 02
+      </div>
+
+      <div class="details">
+        <h3>Bluefield Tea Factory</h3>
+
+        <p>
+          Experience the world-famous Ceylon tea culture with a guided visit to a scenic tea factory surrounded by lush green plantations.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- STOP 3 -->
+
+    <div class="itinerary-box">
+
+      <div class="time">
+        Stop 03
+      </div>
+
+      <div class="details">
+        <h3>Tea Factory Visit (Choose One)</h3>
+
+        <p>
+          <strong>Option A — Kingswood Tea Factory</strong><br>
+          Discover traditional tea-making methods and enjoy beautiful hill country views.
+        </p>
+
+        <br>
+
+        <p>
+          <strong>OR</strong>
+        </p>
+
+        <br>
+
+        <p>
+          <strong>Option B — Labookellie Tea Estate</strong><br>
+          Visit one of the most scenic tea estates in the region, known for breathtaking landscapes and fresh mountain air.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- STOP 4 -->
+
+    <div class="itinerary-box">
+
+      <div class="time">
+        Stop 04
+      </div>
+
+      <div class="details">
+        <h3>Ramboda Falls</h3>
+
+        <p>
+          Enjoy a stop at the stunning Ramboda Falls — one of Sri Lanka’s most beautiful waterfalls and a perfect photo location.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- STOP 5 -->
+
+    <div class="itinerary-box">
+
+      <div class="time">
+        Stop 05
+      </div>
+
+      <div class="details">
+        <h3>Royal Post Office</h3>
+
+        <p>
+          Visit the iconic Nuwara Eliya Post Office, a charming colonial-era landmark famous for its unique British architecture.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- STOP 6 -->
+
+    <div class="itinerary-box">
+
+      <div class="time">
+        Stop 06
+      </div>
+
+      <div class="details">
+        <h3>Central Market</h3>
+
+        <p>
+          Explore the lively local market area and experience the everyday culture of Nuwara Eliya.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- STOP 7 -->
+
+    <div class="itinerary-box">
+
+      <div class="time">
+        Stop 07
+      </div>
+
+      <div class="details">
+        <h3>Fruit Market</h3>
+
+        <p>
+          Taste and discover fresh local fruits grown in Sri Lanka’s hill country region.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- STOP 8 -->
+
+    <div class="itinerary-box">
+
+      <div class="time">
+        Stop 08
+      </div>
+
+      <div class="details">
+        <h3>Return To Pickup Point</h3>
+
+        <p>
+          After an unforgettable journey through scenic landscapes and local attractions, we’ll comfortably drop you back at your pickup location.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery" id="gallery">
+
+  <div class="section-title">
+    <h2>GALLERY</h2>
+  </div>
+
+  <div class="gallery-container">
+
+    <img src="images/gallery 1.jpeg">
+    <img src="images/gallery 2.jpeg">
+    <img src="images/gallery 3.jpeg">
+    <img src="images/gallery 4.jpeg">
+    <img src="images/gallery 5.jpeg">
+    <img src="images/gallery 6.jpeg">
+    <img src="images/gallery 7.jpeg">
+    <img src="images/gallery 8.jpeg">
+    <img src="images/gallery 9.jpeg">
+    <img src="images/gallery 10.jpeg">
+    <img src="images/gallery 11.jpeg">
+    <img src="images/gallery 12.jpeg">
+    <img src="images/gallery 13.jpeg">
+    <img src="images/gallery 14.jpeg">
+    <img src="images/gallery 15.jpeg">
+    <img src="images/gallery 16.jpeg">
+    <img src="images/gallery 17.jpeg">
+    <img src="images/gallery 18.jpeg">
+    <img src="images/gallery 19.jpeg">
+    <img src="images/gallery 20.jpeg">
+    <img src="images/gallery 21.jpeg">
+    <img src="images/gallery 22.jpeg">
+    <img src="images/gallery 23.jpeg">
+    <img src="images/gallery 24.jpeg">
+    <img src="images/gallery 25.jpeg">
+    <img src="images/gallery 26.jpeg">
+    <img src="images/gallery 27.jpeg">
+    <img src="images/gallery 28.jpeg">
+    <img src="images/gallery 29.jpeg">
+    <img src="images/gallery 30.jpeg">
+    <img src="images/gallery 31.jpeg">
+    
+  </div>
+
+</section>
+
+<!-- ================= REVIEWS ================= -->
+
+<section id="reviews">
+
+  <div class="section-title">
+    <h2>TRAVELER REVIEWS</h2>
+  </div>
+
+  <div class="review-container">
+
+    <!-- REVIEW 1 -->
+
+    <div class="review-card">
+
+      <div style="color:#ffb400; font-size:20px; margin-bottom:15px;">
+        ★★★★★
+      </div>
+
+      <p>
+        “Amazing tea plantation experience and beautiful waterfalls.
+        Friendly local driver and unforgettable memories!”
+      </p>
+
+      <h4>- Emma, UK</h4>
+
+    </div>
+
+    <!-- REVIEW 2 -->
+
+    <div class="review-card">
+
+      <div style="color:#ffb400; font-size:20px; margin-bottom:15px;">
+        ★★★★★
+      </div>
+
+      <p>
+        “Best tuk tuk tour in Nuwara Eliya! Very professional,
+        safe driving and hidden local places.”
+      </p>
+
+      <h4>- Daniel, Germany</h4>
+
+    </div>
+
+    <!-- REVIEW 3 -->
+
+    <div class="review-card">
+
+      <div style="color:#ffb400; font-size:20px; margin-bottom:15px;">
+        ★★★★★
+      </div>
+
+      <p>
+        “Highly recommended experience. Tea tasting, waterfalls
+        and local culture all in one perfect tour.”
+      </p>
+
+      <h4>- Sophia, Australia</h4>
+
+    </div>
+
+  </div>
+
+  <!-- TRIPADVISOR BUTTON -->
+
+  <div style="text-align:center; margin-top:50px;">
+
+   <a href="https://www.google.com/search?q=Kips+Drivers+TripAdvisor"
+   target="_blank"
+   style="
+   background:#34e0a1;
+   color:#000;
+   padding:16px 35px;
+   border-radius:50px;
+   text-decoration:none;
+   font-weight:700;
+   display:inline-block;
+   transition:0.3s;
+   font-size:18px;
+   ">
+
+   ⭐ View Our TripAdvisor Reviews
+
+</a>
+
+  </div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+  <div class="section-title">
+    <h2>CONTACT US</h2>
+  </div>
+
+  <div class="contact-container">
+
+    <div class="contact-info">
+
+      <h3>Get In Touch</h3>
+
+      <p>
+        <i class="fa-solid fa-phone"></i>
+        +94 779944918
+      </p>
+
+      <p>
+        <i class="fa-brands fa-whatsapp"></i>
+        WhatsApp Available
+      </p>
+
+      <p>
+        <i class="fa-solid fa-location-dot"></i>
+        Nuwara Eliya, Sri Lanka
+      </p>
+
+    </div>
+
+    <form class="contact-form" onsubmit="sendToWhatsApp(); return false;">
+
+  <input type="text" id="name" placeholder="Your Name" required>
+
+  <input type="email" id="email" placeholder="Your Email" required>
+
+  <textarea id="message" placeholder="Your Message"></textarea>
+
+  <button type="submit">
+    Send Message
+  </button>
+
+</form>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <h2>Nuwara Eliya Tuk Tuk Tours</h2>
+
+  <p>Explore Nuwara Eliya Like a Local</p>
+
+  <p class="copy">
+    © 2026 Nuwara Eliya Tuk Tuk Tours. All Rights Reserved.
+  </p>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+const navItems = document.querySelectorAll('.nav-links a');
+
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
+
+function sendToWhatsApp(){
+
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let message = document.getElementById('message').value;
+
+    let phoneNumber = "94779944918";
+
+    let url = "https://wa.me/" + phoneNumber + "?text="
+    + "Name: " + name + "%0a"
+    + "Email: " + email + "%0a"
+    + "Message: " + message;
+
+    window.open(url, '_blank');
+}
+
+</script>
+
+</body>
+</html>
